@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EDXLY Design System - Inspired by colorful educational platforms
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    /* Primary - Education Green */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 142 76% 30%;
+
+    /* Secondary - Learning Blue */
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 210 100% 45%;
+
+    /* Grade Colors */
+    --grade-prek: 195 100% 50%; /* Cyan */
+    --grade-k: 25 95% 53%; /* Orange */
+    --grade-1: 142 76% 36%; /* Green */
+    --grade-2: 271 81% 56%; /* Purple */
+    --grade-3: 0 84% 60%; /* Red */
+    --grade-4: 200 98% 39%; /* Blue */
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 47 96% 53%;
+    --accent-foreground: 220 15% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
+
+    /* Educational Theme Colors */
+    --success: 142 76% 36%;
+    --warning: 47 96% 53%;
+    --info: 210 100% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(200 98% 39%));
+    --gradient-learning: linear-gradient(135deg, hsl(210 100% 50%), hsl(271 81% 56%));
+    --gradient-achievement: linear-gradient(135deg, hsl(47 96% 53%), hsl(25 95% 53%));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 142 76% 40%;
+
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 210 100% 55%;
+
+    /* Grade Colors - Dark Mode */
+    --grade-prek: 195 100% 60%;
+    --grade-k: 25 95% 63%;
+    --grade-1: 142 76% 46%;
+    --grade-2: 271 81% 66%;
+    --grade-3: 0 84% 70%;
+    --grade-4: 200 98% 49%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 47 96% 63%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 142 76% 36%;
+
+    --success: 142 76% 46%;
+    --warning: 47 96% 63%;
+    --info: 210 100% 60%;
+    
+    /* Dark Mode Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(200 98% 39%));
+    --gradient-learning: linear-gradient(135deg, hsl(210 100% 50%), hsl(271 81% 56%));
+    --gradient-achievement: linear-gradient(135deg, hsl(47 96% 53%), hsl(25 95% 53%));
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Educational Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-grade {
+    @apply bg-white text-foreground px-6 py-3 rounded-lg font-medium hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg border border-border;
+  }
+  
+  /* Grade Color Variants */
+  .grade-prek { @apply bg-gradient-to-br from-[hsl(var(--grade-prek))] to-[hsl(var(--grade-prek)/0.8)] text-white; }
+  .grade-k { @apply bg-gradient-to-br from-[hsl(var(--grade-k))] to-[hsl(var(--grade-k)/0.8)] text-white; }
+  .grade-1 { @apply bg-gradient-to-br from-[hsl(var(--grade-1))] to-[hsl(var(--grade-1)/0.8)] text-white; }
+  .grade-2 { @apply bg-gradient-to-br from-[hsl(var(--grade-2))] to-[hsl(var(--grade-2)/0.8)] text-white; }
+  .grade-3 { @apply bg-gradient-to-br from-[hsl(var(--grade-3))] to-[hsl(var(--grade-3)/0.8)] text-white; }
+  .grade-4 { @apply bg-gradient-to-br from-[hsl(var(--grade-4))] to-[hsl(var(--grade-4)/0.8)] text-white; }
+  
+  /* Grade Hover Effects with Glow */
+  .grade-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .grade-hover:hover {
+    box-shadow: 0 0 30px rgba(var(--grade-prek), 0.4);
+  }
+  
+  /* Animations */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .slide-left {
+    animation: slideLeft 20s linear infinite;
+  }
+  
+  .slide-right {
+    animation: slideRight 25s linear infinite;
+  }
+  
+  /* AI Assistant Button */
+  .ai-assistant-btn {
+    @apply fixed bottom-6 right-6 bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50;
+  }
+  
+  .ai-assistant-btn.connected {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 animate-pulse;
+  }
+  
+  .ai-assistant-btn.listening {
+    @apply bg-gradient-to-r from-red-500 to-pink-600;
+    animation: pulse 1s infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes slideLeft {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  @keyframes slideRight {
+    0% { transform: translateX(-100vw); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes bounce-in {
+    0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.05) rotate(5deg); }
+    70% { transform: scale(0.9) rotate(-2deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
