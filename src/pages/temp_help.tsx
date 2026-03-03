@@ -1,4 +1,3 @@
-import React from "react";
 import { Search, Book, CreditCard, GraduationCap, MessageSquare } from "lucide-react";
 import { Input } from "../components/ui/input";
 

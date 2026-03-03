@@ -17,7 +17,7 @@ import HeroSection from "./components/HeroSection";
 import ComingSoon from "./pages/ComingSoon"
 import MembershipPage from "./pages/Membership";
 import LegalPage from "./pages/Legal";
-import HelpCenter from "./pages/helpcenter";
+import HelpCenter from "./pages/temp_help"
 
 const queryClient = new QueryClient();
 
