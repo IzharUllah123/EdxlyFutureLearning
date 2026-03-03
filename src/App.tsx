@@ -17,6 +17,7 @@ import HeroSection from "./components/HeroSection";
 import ComingSoon from "./pages/ComingSoon"
 import MembershipPage from "./pages/Membership";
 import LegalPage from "./pages/Legal";
+import HelpCenter from "./pages/helpcenter";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/membership" element={<MembershipPage />} />
             <Route path="/terms" element={<LegalPage />} />
             <Route path="/privacy" element={<LegalPage />} />
+            <Route path="/help" element={<HelpCenter /> } />
             
           {/* Will update these six Components in V2 of the Project */}
             <Route path="/resources/study-guides" element={<ComingSoon />} />
