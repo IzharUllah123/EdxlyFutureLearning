@@ -4,7 +4,105 @@ import { Button } from "@/components/ui/button";
 import { Download, FileText, Gamepad2, Users, BookOpen, Printer, Monitor, BarChart3 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+const resourceCategories = [
+  {
+    title: "Study Guides",
+    description: "Comprehensive guides for all subjects and grade levels",
+    icon: BookOpen,
+    resources: [
+      { name: "Pre-K Math Study Guide", type: "PDF", size: "2.1 MB", downloads: 1240 },
+      { name: "Kindergarten Reading Guide", type: "PDF", size: "3.4 MB", downloads: 980 },
+      { name: "1st Grade Science Guide", type: "PDF", size: "2.8 MB", downloads: 756 },
+      { name: "2nd Grade Language Arts", type: "PDF", size: "4.2 MB", downloads: 892 }
+    ]
+  },
+  {
+    title: "Printable Worksheets",
+    description: "Ready-to-print practice worksheets",
+    icon: Printer,
+    resources: [
+      { name: "Addition Practice Sheets", type: "PDF", size: "1.5 MB", downloads: 2340 },
+      { name: "Letter Tracing Worksheets", type: "PDF", size: "2.2 MB", downloads: 1890 },
+      { name: "Counting Exercises", type: "PDF", size: "1.8 MB", downloads: 1567 },
+      { name: "Phonics Practice Pages", type: "PDF", size: "3.1 MB", downloads: 1234 }
+    ]
+  },
+  {
+    title: "Student Portal Features",
+    description: "Everything students need for a successful learning journey",
+    icon: Monitor,
+    resources: [
+      { name: "Interactive Dashboard", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Live Class Management", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Session History & Recordings", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Performance Tracker", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Achievement System", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Content Library", type: "Feature", size: "Available", downloads: 0 }
+    ]
+  },
+  {
+    title: "Admin Panel Features",
+    description: "Comprehensive administrative tools for managing the learning platform",
+    icon: BarChart3,
+    resources: [
+      { name: "User Management", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Course Management", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Live Session Engine", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Analytics & Reporting", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Feedback Management", type: "Feature", size: "Available", downloads: 0 },
+      { name: "Security & Compliance", type: "Feature", size: "Available", downloads: 0 }
+    ]
+  },
+  {
+    title: "Educational Games",
+    description: "Fun interactive games for learning",
+    icon: Gamepad2,
+    resources: [
+      { name: "Number Matching Game", type: "Online", size: "Play Now", downloads: 3450 },
+      { name: "Letter Recognition Quiz", type: "Online", size: "Play Now", downloads: 2890 },
+      { name: "Shape Sorting Challenge", type: "Online", size: "Play Now", downloads: 2156 },
+      { name: "Word Building Game", type: "Online", size: "Play Now", downloads: 1876 }
+    ]
+  },
+  {
+    title: "Parent Resources",
+    description: "Tools and tips for parents and caregivers",
+    icon: Users,
+    resources: [
+      { name: "Home Learning Tips", type: "PDF", size: "1.2 MB", downloads: 567 },
+      { name: "Progress Tracking Sheet", type: "PDF", size: "0.8 MB", downloads: 789 },
+      { name: "Reading Strategies Guide", type: "PDF", size: "2.5 MB", downloads: 432 },
+      { name: "Math Activities at Home", type: "PDF", size: "1.9 MB", downloads: 678 }
+    ]
+  }
+];
 
+const featuredResources = [
+  {
+    title: "Complete Pre-K Curriculum Bundle",
+    description: "Everything you need for Pre-K learning in one comprehensive package",
+    image: "/placeholder.svg",
+    type: "Bundle",
+    price: "Free",
+    downloads: 5670
+  },
+  {
+    title: "Interactive Math Games Collection",
+    description: "15+ engaging math games for kindergarten and 1st grade students",
+    image: "/placeholder.svg",
+    type: "Games",
+    price: "Free",
+    downloads: 4230
+  },
+  {
+    title: "Reading Comprehension Toolkit",
+    description: "Stories, questions, and activities to boost reading skills",
+    image: "/placeholder.svg",
+    type: "Toolkit",
+    price: "Free",
+    downloads: 3890
+  }
+];
 
 const Resources = () => {
   const navigate = useNavigate();

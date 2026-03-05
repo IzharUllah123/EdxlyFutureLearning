@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "209862401672",
+    "project_id": "edxlylearning",
+    "storage_bucket": "edxlylearning.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209862401672:android:20c42a61d49d2217d3493d",
+        "android_client_info": {
+          "package_name": "com.Edxly_FutureLearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209862401672-3n0scl472lasmgs2ei5rg41qh0cej0qn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Edxly_FutureLearning",
+            "certificate_hash": "6c671f5b1e9438b843ebf2f23fd455c0e2454f4f"
+          }
+        },
+        {
+          "client_id": "209862401672-10nt0a0ivjq4jhver7oknegr8j71ir9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZRujaZEs5sWQfGUSu-kP7JilkxW2wt9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209862401672-10nt0a0ivjq4jhver7oknegr8j71ir9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
