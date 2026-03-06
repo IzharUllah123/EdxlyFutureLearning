@@ -5,7 +5,8 @@ const config: CapacitorConfig = {
   appName: 'Edxly_FutureLearning',
   webDir: 'dist',
   server: {
-    androidScheme: 'https' // Ensure this matches your error screenshot
+    url: 'https://edxly-future-learning-enzk.vercel.app',  // ← ADD THIS
+    cleartext: true
   }
 };
 
