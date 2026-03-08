@@ -8,6 +8,7 @@ import {
   Volume2, StopCircle, MessageCircle, X, Send, ChevronDown, Loader2,
   Gamepad2, Check, Zap
 } from "lucide-react";
+
 import { curriculumDatabase } from "@/data/curriculum";
 import type { AILesson } from "@/data/curriculum";
 
@@ -25,6 +26,7 @@ import AuthModal from "@/components/AuthModal";
 // ==========================================
 // MAIN PAGE COMPONENT
 // ==========================================
+const [shouldAdvance, setShouldAdvance] = useState(false);
 const PRAISE_WORDS = ["Terrific!", "Superb!", "Excellent!", "Correct!", "Great Job!", "Amazing!", "Wonderful!", "Perfect!", "Brilliant!", "Outstanding!"];
 
 const LOADING_MESSAGES = ["Sharpening virtual pencils...", "Summoning the math wizards...", "Calculating the fun...", "Building your custom challenge...", "Double-checking the answers...", "Almost ready to learn!", "Loading the logic...", "Preparing the puzzle pieces..."];
@@ -205,6 +207,12 @@ const LearningPage = () => {
     });
     return () => unsubscribe();
   }, []);
+useEffect(() => {
+  if (shouldAdvance) {
+    setShouldAdvance(false);
+    handleNextQuestion();
+  }
+}, [shouldAdvance, currentQuestionIndex]);
 
   useEffect(() => {
     const rand = Math.random();
@@ -388,7 +396,8 @@ const LearningPage = () => {
       const randomPraise = PRAISE_WORDS[Math.floor(Math.random() * PRAISE_WORDS.length)];
       setFeedbackMessage(randomPraise);
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(randomPraise));
-      setTimeout(() => handleNextQuestion(), 1500);
+      // setTimeout(() => handleNextQuestion(), 1500);
+      setTimeout(() => setShouldAdvance(true), 1500);
     } else {
       setFeedbackMessage(`The correct answer was ${correctLetter}.`);
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(`Not quite. The correct answer was ${correctLetter}.`));
