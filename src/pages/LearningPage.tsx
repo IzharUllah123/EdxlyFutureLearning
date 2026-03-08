@@ -26,7 +26,8 @@ import AuthModal from "@/components/AuthModal";
 // ==========================================
 // MAIN PAGE COMPONENT
 // ==========================================
-const [shouldAdvance, setShouldAdvance] = useState(false);
+
+
 const PRAISE_WORDS = ["Terrific!", "Superb!", "Excellent!", "Correct!", "Great Job!", "Amazing!", "Wonderful!", "Perfect!", "Brilliant!", "Outstanding!"];
 
 const LOADING_MESSAGES = ["Sharpening virtual pencils...", "Summoning the math wizards...", "Calculating the fun...", "Building your custom challenge...", "Double-checking the answers...", "Almost ready to learn!", "Loading the logic...", "Preparing the puzzle pieces..."];
@@ -200,7 +201,7 @@ const LearningPage = () => {
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   const [gameType, setGameType] = useState<"catch" | "wordsearch" | "typing" | "bubblepop">("catch");
-
+const [shouldAdvance, setShouldAdvance] = useState(false);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
