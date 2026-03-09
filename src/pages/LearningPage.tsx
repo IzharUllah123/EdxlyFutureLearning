@@ -382,9 +382,8 @@ useEffect(() => {
     return;
   }
 // added add
-  if (!selectedAnswer || !lesson) return;
-  incrementQuestion();
-    window.speechSynthesis.cancel();
+ if (!selectedAnswer || !lesson) return;
+window.speechSynthesis.cancel();
     setIsSpeaking(false);
     const currentQ = lesson.questions[currentQuestionIndex];
     const selectedLetter = selectedAnswer.split(/[).]/)[0].trim().toUpperCase();
@@ -403,6 +402,8 @@ useEffect(() => {
       setFeedbackMessage(`The correct answer was ${correctLetter}.`);
       window.speechSynthesis.speak(new SpeechSynthesisUtterance(`Not quite. The correct answer was ${correctLetter}.`));
     }
+  
+  incrementQuestion();
   };
 
   const handleNextQuestion = () => {

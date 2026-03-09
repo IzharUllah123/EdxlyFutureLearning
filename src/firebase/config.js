@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInAnonymously } from "firebase/auth"; // Added signInAnonymously
-import { getFirestore } from "firebase/firestore"; // Added Firestore
+// import { getFirestore } from "firebase/firestore"; // Added Firestore
+import { initializeFirestore, memoryLocalCache } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,7 +15,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getFirestore(app); // Export database
+// export const db = getFirestore(app); // Export database
+export const db = initializeFirestore(app, {
+  localCache: memoryLocalCache()
+});
 export const googleProvider = new GoogleAuthProvider();
 
 // Function to sign in guests silently so we can track them

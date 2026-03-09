@@ -110,14 +110,15 @@ export const useQuestionTracker = () => {
         updateData.lastResetDate = today;
       }
 
-      await updateDoc(userDocRef, updateData);
+    // ✅ Update local state FIRST — before Firestore
+setRemaining((prev) => {
+  const newRemaining = Math.max(0, prev - 1);
+  setIsLimitReached(newRemaining === 0);
+  return newRemaining;
+});
 
-      // Update local state
-      setRemaining((prev) => {
-        const newRemaining = Math.max(0, prev - 1);
-        setIsLimitReached(newRemaining === 0);
-        return newRemaining;
-      });
+// Then Firestore in background
+await updateDoc(userDocRef, updateData);
     } catch (error) {
       console.error("Error incrementing question:", error);
     }
